@@ -1,16 +1,18 @@
 class Bus
-attr_reader :name, :capacity, :passengers, :number_of_passengers
+attr_reader :name, :capacity, :passengers
 
   def initialize(name, capacity)
     @name = name
     @capacity = capacity
     @passengers = []
-    @number_of_passengers = 0
   end
 
   def add_passenger(passenger_name)
     @passengers << passenger_name
-    @number_of_passengers += 1
+  end
+
+  def number_of_passengers
+    @passengers.length
   end
 
   def yell_at_passengers
@@ -19,12 +21,11 @@ attr_reader :name, :capacity, :passengers, :number_of_passengers
   end
 
   def over_capacity?
-    return true if @number_of_passengers > 4
+    return true if number_of_passengers > capacity
     false
   end
 
   def kick_out
     @passengers.shift
-    @number_of_passengers -= 1
   end
 end
