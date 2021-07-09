@@ -1,9 +1,11 @@
 class Bus
-attr_reader :name, :capacity, :passengers
+attr_reader :name,
+            :capacity,
+            :passengers
 
   def initialize(name, capacity)
-    @name = name
-    @capacity = capacity
+    @name       = name
+    @capacity   = capacity
     @passengers = []
   end
 
@@ -16,13 +18,13 @@ attr_reader :name, :capacity, :passengers
   end
 
   def yell_at_passengers
-    @passengers.map do |passenger| passenger.upcase
+    @passengers.map do |passenger|
+      passenger.upcase
     end
   end
 
   def over_capacity?
-    return true if number_of_passengers > capacity
-    false
+    number_of_passengers > @               capacity
   end
 
   def kick_out

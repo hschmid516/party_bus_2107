@@ -51,7 +51,7 @@ describe Bus do
 
   # Iteration 3
   context 'Capacity' do
-    it 'returns the number of passengers' do
+    it 'can count number of passengers' do
       bus = Bus.new('Mikes Awesome Bus', 4)
       bus.add_passenger('Mike')
       bus.add_passenger('Megan')
